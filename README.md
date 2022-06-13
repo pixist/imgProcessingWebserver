@@ -1,7 +1,5 @@
 # imgProcessingWebserver
-Webserver that supports some image processing functions in C
-
-Akta Webserver For Image Resize
+Webserver that supports image processing functions in C
 
 CONTENTS OF THIS FILE
 ---------------------
