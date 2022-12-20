@@ -1,19 +1,20 @@
 #include "get_image.h"
 // compile with $ gcc get_image.c -o d.o -lcurl
-char* getImage(char *URL, char *filename)
+char *getImage(char *URL, char *filename)
 {
     CURL *curl;
     FILE *fp;
     int result;
     char *ret;
-    int des_size = strlen(URL)+8;
-    char updatedURL[des_size*2];
-    memset(updatedURL,0,strlen(updatedURL));
+    int des_size = strlen(URL) + 8;
+    char updatedURL[des_size * 2];
+    memset(updatedURL, 0, strlen(updatedURL));
     strcat(strcat(updatedURL, "https://"), URL);
 
     struct stat st = {0};
 
-    if (stat("cache", &st) == -1) {
+    if (stat("cache", &st) == -1)
+    {
         mkdir("cache", 0700);
     }
 
@@ -26,11 +27,12 @@ char* getImage(char *URL, char *filename)
 
     result = curl_easy_perform(curl);
 
-    if(result == CURLE_OK)
+    if (result == CURLE_OK)
     {
         printf("Download Successful!\n");
         ret = "200 OK";
-    } else
+    }
+    else
     {
         ret = strdup(curl_easy_strerror(result));
         printf("ERROR: %s\n", ret);
