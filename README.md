@@ -39,6 +39,6 @@ CONFIGURATION
 Program does not take any arguments during runtime. It can be compiled
 with the following line on the terminal.
 
-``$ gcc Server.c -o server.o get_image.c -lcurl image_proc.c `pkg-config --cflags --libs MagickWand` ``
+`$ gcc Server.c -o server.o get_image.c -lcurl image_proc.c `pkg-config --cflags --libs MagickWand``
   
 Compiled version is also included in the repository as `server.o`.
